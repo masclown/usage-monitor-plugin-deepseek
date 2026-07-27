@@ -142,7 +142,6 @@
         "seriesNamesField": "daily_cost_series_names",
         "valuesMatrixField": "daily_cost_matrix",
         "unit": "¥",
-        "colors": ["#0C70F3"],
         "dataGroups": [
           { "id": "ds.daily_cost.all", "display": "i18n:plugin.DeepSeek.group.dailyCostAll", "fields": [
             { "fieldName": "request_cost", "role": "Value" }
@@ -152,13 +151,12 @@
       {
         "chartId": "ds.chart.daily_requests",
         "display": "i18n:plugin.DeepSeek.chart.daily_requests",
-        "kind": "Area",
+        "kind": "Curve",
         "defaultOrder": 3,
         "categoriesField": "daily_requests_categories",
         "seriesNamesField": "daily_requests_series_names",
         "valuesMatrixField": "daily_requests_matrix",
         "unit": "次",
-        "colors": ["#0C70F3"],
         "dataGroups": [
           { "id": "ds.daily_requests.all", "display": "i18n:plugin.DeepSeek.group.dailyRequestsAll", "fields": [
             { "fieldName": "request_count", "role": "Value" }
@@ -174,12 +172,25 @@
         "seriesNamesField": "daily_tokens_series_names",
         "valuesMatrixField": "daily_tokens_matrix",
         "unit": "tokens",
-        "colors": ["#0C70F3", "#60B3FE", "#A0DCFD"],
         "dataGroups": [
           { "id": "ds.daily_tokens.all", "display": "i18n:plugin.DeepSeek.group.dailyTokensAll", "fields": [
             { "fieldName": "cache_miss_token", "role": "Value" },
             { "fieldName": "cache_hit_token", "role": "Value" },
             { "fieldName": "response_token", "role": "Value" }
+          ] }
+        ]
+      },
+      {
+        "chartId": "ds.chart.balance_progress",
+        "display": "i18n:plugin.DeepSeek.chart.balance_progress",
+        "kind": "StackedProgress",
+        "defaultOrder": 5,
+        "unit": "¥",
+        "colors": ["#4D6BFE", "#33C4A8"],
+        "dataGroups": [
+          { "id": "ds.progress.balance", "display": "i18n:plugin.DeepSeek.group.progressBalance", "fields": [
+            { "fieldName": "balance_amount", "role": "Value" },
+            { "fieldName": "bonus_balance_amount", "role": "Value" }
           ] }
         ]
       }

@@ -9,6 +9,8 @@
   "plugin.DeepSeek.chart.daily_cost": "每日消费",
   "plugin.DeepSeek.chart.daily_requests": "API 请求",
   "plugin.DeepSeek.chart.daily_tokens": "Token 用量",
+  "plugin.DeepSeek.chart.balance_progress": "余额构成",
+  "plugin.DeepSeek.group.progressBalance": "余额构成",
   "plugin.DeepSeek.group.numberBalance": "钱包余额",
   "plugin.DeepSeek.group.numberMonthlyCost": "本月消费",
   "plugin.DeepSeek.group.numberTotalCost": "累计消费",

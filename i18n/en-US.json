@@ -9,6 +9,8 @@
   "plugin.DeepSeek.chart.daily_cost": "Daily Cost",
   "plugin.DeepSeek.chart.daily_requests": "API Requests",
   "plugin.DeepSeek.chart.daily_tokens": "Token Usage",
+  "plugin.DeepSeek.chart.balance_progress": "Balance Breakdown",
+  "plugin.DeepSeek.group.progressBalance": "Balance Breakdown",
   "plugin.DeepSeek.group.numberBalance": "Wallet Balance",
   "plugin.DeepSeek.group.numberMonthlyCost": "Monthly Cost",
   "plugin.DeepSeek.group.numberTotalCost": "Total Cost",
