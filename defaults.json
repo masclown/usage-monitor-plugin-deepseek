@@ -124,8 +124,8 @@
     "primaryMetric": "balance_amount",
     "charts": [
       {
-        "chartId": "ds.chart.balance_number",
-        "display": "i18n:plugin.DeepSeek.chart.balance_number",
+        "chartId": "ds.chart.overview",
+        "display": "i18n:plugin.DeepSeek.chart.overview",
         "kind": "Number",
         "defaultOrder": 1,
         "tooltip": {
@@ -137,15 +137,15 @@
           ]
         },
         "dataGroups": [
-          { "id": "ds.number.balance", "display": "i18n:plugin.DeepSeek.group.numberBalance", "fields": [{ "fieldName": "balance_amount", "role": "Value" }] },
-          { "id": "ds.number.monthly_cost", "display": "i18n:plugin.DeepSeek.group.numberMonthlyCost", "fields": [{ "fieldName": "monthly_cost", "role": "Value" }] },
-          { "id": "ds.number.total_cost", "display": "i18n:plugin.DeepSeek.group.numberTotalCost", "fields": [{ "fieldName": "total_cost", "role": "Value" }] },
-          { "id": "ds.number.monthly_tokens", "display": "i18n:plugin.DeepSeek.group.numberMonthlyTokens", "fields": [{ "fieldName": "monthly_token_usage", "role": "Value" }] }
+          { "id": "ds.group.balance", "display": "i18n:plugin.DeepSeek.group.balance", "fields": [{ "fieldName": "balance_amount", "role": "Value" }] },
+          { "id": "ds.group.monthlyCost", "display": "i18n:plugin.DeepSeek.group.monthlyCost", "fields": [{ "fieldName": "monthly_cost", "role": "Value" }] },
+          { "id": "ds.group.totalCost", "display": "i18n:plugin.DeepSeek.group.totalCost", "fields": [{ "fieldName": "total_cost", "role": "Value" }] },
+          { "id": "ds.group.monthlyToken", "display": "i18n:plugin.DeepSeek.group.monthlyToken", "fields": [{ "fieldName": "monthly_token_usage", "role": "Value" }] }
         ]
       },
       {
-        "chartId": "ds.chart.daily_cost",
-        "display": "i18n:plugin.DeepSeek.chart.daily_cost",
+        "chartId": "ds.chart.dailyCost",
+        "display": "i18n:plugin.DeepSeek.chart.dailyCost",
         "kind": "StackedBar",
         "defaultOrder": 2,
         "categoriesField": "daily_cost_categories",
@@ -153,14 +153,14 @@
         "valuesMatrixField": "daily_cost_matrix",
         "unit": "¥",
         "dataGroups": [
-          { "id": "ds.daily_cost.all", "display": "i18n:plugin.DeepSeek.group.dailyCostAll", "fields": [
+          { "id": "ds.dailyCost.model", "display": "i18n:plugin.DeepSeek.group.dailyCostModel", "fields": [
             { "fieldName": "request_cost", "role": "Value" }
           ] }
         ]
       },
       {
-        "chartId": "ds.chart.daily_requests",
-        "display": "i18n:plugin.DeepSeek.chart.daily_requests",
+        "chartId": "ds.chart.requestTrend",
+        "display": "i18n:plugin.DeepSeek.chart.requestTrend",
         "kind": "Curve",
         "defaultOrder": 3,
         "categoriesField": "daily_requests_categories",
@@ -169,14 +169,14 @@
         "unit": "次",
         "colors": ["#4D6BFE"],
         "dataGroups": [
-          { "id": "ds.daily_requests.all", "display": "i18n:plugin.DeepSeek.group.dailyRequestsAll", "fields": [
+          { "id": "ds.requestTrend.model", "display": "i18n:plugin.DeepSeek.group.requestCountModel", "fields": [
             { "fieldName": "request_count", "role": "Value" }
           ] }
         ]
       },
       {
-        "chartId": "ds.chart.daily_tokens",
-        "display": "i18n:plugin.DeepSeek.chart.daily_tokens",
+        "chartId": "ds.chart.dailyToken",
+        "display": "i18n:plugin.DeepSeek.chart.dailyToken",
         "kind": "StackedBar",
         "defaultOrder": 4,
         "categoriesField": "daily_tokens_categories",
@@ -188,7 +188,7 @@
           "response_token": "i18n:plugin.DeepSeek.series.response"
         },
         "dataGroups": [
-          { "id": "ds.daily_tokens.all", "display": "i18n:plugin.DeepSeek.group.dailyTokensAll", "fields": [
+          { "id": "ds.dailyToken.model", "display": "i18n:plugin.DeepSeek.group.dailyTokenModel", "fields": [
             { "fieldName": "cache_miss_token", "role": "Value" },
             { "fieldName": "cache_hit_token", "role": "Value" },
             { "fieldName": "response_token", "role": "Value" }
@@ -196,8 +196,8 @@
         ]
       },
       {
-        "chartId": "ds.chart.channel_cost",
-        "display": "i18n:plugin.DeepSeek.chart.channel_cost",
+        "chartId": "ds.chart.channelCost",
+        "display": "i18n:plugin.DeepSeek.chart.channelCost",
         "kind": "StackedBar",
         "defaultOrder": 5,
         "categoriesField": "channel_cost_categories",
@@ -205,7 +205,7 @@
         "valuesMatrixField": "channel_cost_matrix",
         "unit": "¥",
         "dataGroups": [
-          { "id": "ds.channel_cost.all", "display": "i18n:plugin.DeepSeek.group.channelCostAll", "fields": [
+          { "id": "ds.channelCost.channel", "display": "i18n:plugin.DeepSeek.group.channelCostChannel", "fields": [
             { "fieldName": "channel_request_cost", "role": "Value" }
           ] }
         ]
@@ -214,6 +214,17 @@
   },
   "taskbar": {
     "miniCharts": [
+      {
+        "chartId": "ds.mini.ring",
+        "display": "i18n:plugin.DeepSeek.mini.ring",
+        "kind": "MiniRingChart",
+        "slicer": { "mode": "DataGroup", "interaction": "Scroll", "default": "ds.taskbar.balance" },
+        "tooltip": { "fields": ["__provider_name__", "balance_amount", "monthly_cost"] },
+        "dataGroups": [
+          { "id": "ds.taskbar.balance", "display": "i18n:plugin.DeepSeek.group.taskbarBalance", "fields": [{ "fieldName": "balance_amount", "role": "Value" }] },
+          { "id": "ds.taskbar.monthly", "display": "i18n:plugin.DeepSeek.group.taskbarMonthly", "fields": [{ "fieldName": "monthly_cost", "role": "Value" }] }
+        ]
+      },
       {
         "chartId": "ds.mini.text",
         "display": "i18n:plugin.DeepSeek.mini.text",
