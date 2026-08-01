@@ -6,7 +6,9 @@
   "meta": {
     "version": "1.1.0",
     "author": "UsageMonitor",
-    "description": "Query DeepSeek platform usage (balance / daily cost / requests / tokens)"
+    "description": "Query DeepSeek platform usage (balance / daily cost / requests / tokens)",
+    "iconUrl": "https://avatars.githubusercontent.com/u/148330874?s=128&v=4",
+    "iconUrlDark": "https://avatars.githubusercontent.com/u/148330874?s=128&v=4"
   },
   "credentialDomains": [ "platform.deepseek.com" ],
   "loginConfig": {
