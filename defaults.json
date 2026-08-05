@@ -24,7 +24,7 @@
     "localStorageTokens": { "UserToken": "userToken" }
   },
   "configFields": [
-    { "key": "UserToken", "displayName": "i18n:plugin.DeepSeek.field.UserToken.name", "fieldType": "Password", "isRequired": false, "placeholder": "i18n:plugin.DeepSeek.field.UserToken.placeholder" }
+    { "key": "ApiKey", "displayName": "i18n:plugin.DeepSeek.field.ApiKey.name", "fieldType": "Password", "isRequired": false, "placeholder": "i18n:plugin.DeepSeek.field.ApiKey.placeholder" }
   ],
   "errorGuidance": [
     { "matchCodes": [ "credential_missing", "config_missing" ], "matchKeywords": [], "message": "i18n:plugin.DeepSeek.guidance.credential" },
@@ -117,8 +117,13 @@
       }
     ],
     "computed": [
-      { "target": "subscription_type", "op": "constant", "value": "API" },
-      { "target": "subscription_active", "op": "constant", "value": true }
+      { "target": "subscription_active", "op": "constant", "value": true },
+      { "target": "used_tokens", "op": "sumDailyStats", "column": "token_total", "window": "30d" },
+      { "target": "window_token_1d", "op": "sumDailyStats", "column": "token_total", "window": "1d" },
+      { "target": "window_token_7d", "op": "sumDailyStats", "column": "token_total", "window": "7d" },
+      { "target": "window_token_30d", "op": "sumDailyStats", "column": "token_total", "window": "30d" },
+      { "target": "monthly_token_usage", "op": "sumDailyStats", "column": "token_total", "window": "monthToDate", "onlyIfAbsent": true },
+      { "target": "monthly_request_count", "op": "sumDailyStats", "column": "request_count", "window": "monthToDate" }
     ]
   },
   "card": {
@@ -139,10 +144,10 @@
           ]
         },
         "dataGroups": [
-          { "id": "ds.group.balance", "display": "i18n:plugin.DeepSeek.group.balance", "fields": [{ "fieldName": "balance_amount", "role": "Value" }] },
-          { "id": "ds.group.monthlyCost", "display": "i18n:plugin.DeepSeek.group.monthlyCost", "fields": [{ "fieldName": "monthly_cost", "role": "Value" }] },
-          { "id": "ds.group.totalCost", "display": "i18n:plugin.DeepSeek.group.totalCost", "fields": [{ "fieldName": "total_cost", "role": "Value" }] },
-          { "id": "ds.group.monthlyToken", "display": "i18n:plugin.DeepSeek.group.monthlyToken", "fields": [{ "fieldName": "monthly_token_usage", "role": "Value" }] }
+          { "id": "sdk.template.balanceAmount", "display": "i18n:plugin.DeepSeek.group.balance", "fields": [{ "fieldName": "balance_amount", "role": "Value" }] },
+          { "id": "sdk.template.monthlyCost", "display": "i18n:plugin.DeepSeek.group.monthlyCost", "fields": [{ "fieldName": "monthly_cost", "role": "Value" }] },
+          { "id": "sdk.template.totalCost", "display": "i18n:plugin.DeepSeek.group.totalCost", "fields": [{ "fieldName": "total_cost", "role": "Value" }] },
+          { "id": "sdk.template.monthlyTokenUsage", "display": "i18n:plugin.DeepSeek.group.monthlyToken", "fields": [{ "fieldName": "monthly_token_usage", "role": "Value" }] }
         ]
       },
       {
@@ -155,7 +160,7 @@
         "valuesMatrixField": "daily_cost_matrix",
         "unit": "¥",
         "dataGroups": [
-          { "id": "ds.dailyCost.model", "display": "i18n:plugin.DeepSeek.group.dailyCostModel", "fields": [
+          { "id": "sdk.template.dailyCost", "display": "i18n:plugin.DeepSeek.group.dailyCostModel", "fields": [
             { "fieldName": "request_cost", "role": "Value" }
           ] }
         ]
@@ -171,7 +176,7 @@
         "unit": "次",
         "colors": ["#4D6BFE"],
         "dataGroups": [
-          { "id": "ds.requestTrend.model", "display": "i18n:plugin.DeepSeek.group.requestCountModel", "fields": [
+          { "id": "sdk.template.dailyRequestCount", "display": "i18n:plugin.DeepSeek.group.requestCountModel", "fields": [
             { "fieldName": "request_count", "role": "Value" }
           ] }
         ]
@@ -190,7 +195,7 @@
           "response_token": "i18n:plugin.DeepSeek.series.response"
         },
         "dataGroups": [
-          { "id": "ds.dailyToken.model", "display": "i18n:plugin.DeepSeek.group.dailyTokenModel", "fields": [
+          { "id": "sdk.template.dailyCacheToken", "display": "i18n:plugin.DeepSeek.group.dailyTokenModel", "fields": [
             { "fieldName": "cache_miss_token", "role": "Value" },
             { "fieldName": "cache_hit_token", "role": "Value" },
             { "fieldName": "response_token", "role": "Value" }
@@ -207,7 +212,7 @@
         "valuesMatrixField": "channel_cost_matrix",
         "unit": "¥",
         "dataGroups": [
-          { "id": "ds.channelCost.channel", "display": "i18n:plugin.DeepSeek.group.channelCostChannel", "fields": [
+          { "id": "sdk.template.dailyChannelCost", "display": "i18n:plugin.DeepSeek.group.channelCostChannel", "fields": [
             { "fieldName": "channel_request_cost", "role": "Value" }
           ] }
         ]
@@ -223,8 +228,8 @@
         "slicer": { "mode": "DataGroup", "interaction": "Scroll", "default": "ds.taskbar.balance" },
         "tooltip": { "fields": ["__provider_name__", "balance_amount", "monthly_cost"] },
         "dataGroups": [
-          { "id": "ds.taskbar.balance", "display": "i18n:plugin.DeepSeek.group.taskbarBalance", "fields": [{ "fieldName": "balance_amount", "role": "Value" }] },
-          { "id": "ds.taskbar.monthly", "display": "i18n:plugin.DeepSeek.group.taskbarMonthly", "fields": [{ "fieldName": "monthly_cost", "role": "Value" }] }
+          { "id": "sdk.template.balanceAmount", "display": "i18n:plugin.DeepSeek.group.taskbarBalance", "fields": [{ "fieldName": "balance_amount", "role": "Value" }] },
+          { "id": "sdk.template.monthlyCost", "display": "i18n:plugin.DeepSeek.group.taskbarMonthly", "fields": [{ "fieldName": "monthly_cost", "role": "Value" }] }
         ]
       },
       {
@@ -234,8 +239,8 @@
         "slicer": { "mode": "DataGroup", "interaction": "Scroll", "default": "ds.taskbar.balance" },
         "tooltip": { "fields": ["__provider_name__", "balance_amount", "monthly_cost"] },
         "dataGroups": [
-          { "id": "ds.taskbar.balance", "display": "i18n:plugin.DeepSeek.group.taskbarBalance", "fields": [{ "fieldName": "balance_amount", "role": "Value" }] },
-          { "id": "ds.taskbar.monthly", "display": "i18n:plugin.DeepSeek.group.taskbarMonthly", "fields": [{ "fieldName": "monthly_cost", "role": "Value" }] }
+          { "id": "sdk.template.balanceAmount", "display": "i18n:plugin.DeepSeek.group.taskbarBalance", "fields": [{ "fieldName": "balance_amount", "role": "Value" }] },
+          { "id": "sdk.template.monthlyCost", "display": "i18n:plugin.DeepSeek.group.taskbarMonthly", "fields": [{ "fieldName": "monthly_cost", "role": "Value" }] }
         ]
       }
     ]

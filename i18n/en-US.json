@@ -1,9 +1,9 @@
 {
   "plugin.DeepSeek.login.button": "🌐 Get DeepSeek Login",
-  "plugin.DeepSeek.field.UserToken.name": "Platform UserToken",
-  "plugin.DeepSeek.field.UserToken.placeholder": "Click 'Get Login' above to auto-fill; or manually paste localStorage.userToken value",
-  "plugin.DeepSeek.guidance.credential": "Please fill in DeepSeek UserToken in settings (get from localStorage after browser login)",
-  "plugin.DeepSeek.guidance.authInvalid": "UserToken is invalid or expired, please get a new one from browser",
+  "plugin.DeepSeek.field.ApiKey.name": "API Key",
+  "plugin.DeepSeek.field.ApiKey.placeholder": "Enter DeepSeek API Key",
+  "plugin.DeepSeek.guidance.credential": "Please fill in DeepSeek API Key in settings (optional); login state is fetched via browser",
+  "plugin.DeepSeek.guidance.authInvalid": "Login state or API Key is invalid, please re-fetch from browser or check API Key",
   "plugin.DeepSeek.guidance.fallback": "Please check DeepSeek plugin configuration",
 
   "plugin.DeepSeek.chart.overview": "DeepSeek Overview",
