@@ -11,6 +11,7 @@
   "plugin.DeepSeek.chart.requestTrend": "API请求趋势",
   "plugin.DeepSeek.chart.dailyToken": "每日Token用量",
   "plugin.DeepSeek.chart.channelCost": "渠道费用",
+  "plugin.DeepSeek.chart.balanceBreakdown": "余额构成",
 
   "plugin.DeepSeek.group.balance": "余额",
   "plugin.DeepSeek.group.monthlyCost": "本月消费",
@@ -20,6 +21,7 @@
   "plugin.DeepSeek.group.requestCountModel": "API请求（按模型）",
   "plugin.DeepSeek.group.dailyTokenModel": "Token用量（按模型）",
   "plugin.DeepSeek.group.channelCostChannel": "渠道费用（按渠道）",
+  "plugin.DeepSeek.group.balanceBreakdown": "余额构成",
   "plugin.DeepSeek.group.taskbarBalance": "余额",
   "plugin.DeepSeek.group.taskbarMonthly": "月消费",
 
