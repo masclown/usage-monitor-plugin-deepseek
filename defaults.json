@@ -11,6 +11,12 @@
     "iconUrlDark": "https://avatars.githubusercontent.com/u/148330874?s=128&v=4"
   },
   "credentialDomains": [ "platform.deepseek.com" ],
+  "metadata": {
+    "supportedBuckets": [ "day", "week", "month" ],
+    "fallbackBucket": "day",
+    "supportedTables": [ 1 ],
+    "availableSlicerFields": [ "model_name" ]
+  },
   "loginConfig": {
     "loginUrl": "https://platform.deepseek.com/sign_in",
     "cookieDomainFilters": [ "platform.deepseek.com" ],
