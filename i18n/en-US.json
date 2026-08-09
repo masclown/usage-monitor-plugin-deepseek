@@ -28,6 +28,7 @@
   "plugin.DeepSeek.series.cacheMiss": "Cache Miss",
   "plugin.DeepSeek.series.cacheHit": "Cache Hit",
   "plugin.DeepSeek.series.response": "Response",
+  "plugin.DeepSeek.unit.request": "requests",
 
   "plugin.DeepSeek.mini.ring": "Balance Ring",
   "plugin.DeepSeek.mini.text": "Balance Text"

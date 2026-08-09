@@ -28,6 +28,7 @@
   "plugin.DeepSeek.series.cacheMiss": "缓存未命中",
   "plugin.DeepSeek.series.cacheHit": "缓存命中",
   "plugin.DeepSeek.series.response": "响应",
+  "plugin.DeepSeek.unit.request": "次",
 
   "plugin.DeepSeek.mini.ring": "余额圆环",
   "plugin.DeepSeek.mini.text": "余额文本"

@@ -192,7 +192,7 @@
         "categoriesField": "daily_requests_categories",
         "seriesNamesField": "daily_requests_series_names",
         "valuesMatrixField": "daily_requests_matrix",
-        "unit": "次",
+        "unit": "i18n:plugin.DeepSeek.unit.request",
         "colors": ["#4D6BFE"],
         "dataGroups": [
           { "id": "sdk.template.dailyRequestCount", "display": "i18n:plugin.DeepSeek.group.requestCountModel", "fields": [
