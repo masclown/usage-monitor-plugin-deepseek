@@ -136,6 +136,13 @@
     "renderKinds": ["subscriptionTitle", "summary", "charts"],
     "primaryMetric": "balance_amount",
     "collapseDividerIndex": 6,
+    "trayTooltip": {
+      "rows": [
+        { "fieldName": "__provider_name__" },
+        { "fieldName": "balance_amount" },
+        { "fieldName": "monthly_cost", "separatorAfter": true }
+      ]
+    },
     "charts": [
       {
         "chartId": "ds.chart.overview",
