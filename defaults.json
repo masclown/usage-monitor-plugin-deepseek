@@ -270,6 +270,48 @@
             { "fieldName": "available_token_estimation", "role": "Upper" }
           ] }
         ]
+      },
+      {
+        "chartId": "ds.chart.balanceTrend",
+        "display": "i18n:plugin.DeepSeek.chart.balanceTrend",
+        "kind": "Curve",
+        "defaultOrder": 7,
+        "slicer": {
+          "mode": "Period",
+          "position": "TopRight",
+          "interaction": "Button",
+          "timeRanges": ["Last7Days", "Last15Days", "Last30Days"],
+          "default": "Last30Days"
+        },
+        "tooltip": { "fields": ["__date__", "balance_amount"] },
+        "dataGroups": [{
+          "id": "sdk.template.balanceAmount",
+          "fields": [
+            { "fieldName": "recorded_at", "role": "Meta" },
+            { "fieldName": "balance_amount", "role": "Value" }
+          ]
+        }]
+      },
+      {
+        "chartId": "ds.chart.monthlyCostTrend",
+        "display": "i18n:plugin.DeepSeek.chart.monthlyCostTrend",
+        "kind": "Curve",
+        "defaultOrder": 8,
+        "slicer": {
+          "mode": "Period",
+          "position": "TopRight",
+          "interaction": "Button",
+          "timeRanges": ["Last7Days", "Last15Days", "Last30Days"],
+          "default": "Last30Days"
+        },
+        "tooltip": { "fields": ["__date__", "monthly_cost"] },
+        "dataGroups": [{
+          "id": "sdk.template.monthlyCost",
+          "fields": [
+            { "fieldName": "recorded_at", "role": "Meta" },
+            { "fieldName": "monthly_cost", "role": "Value" }
+          ]
+        }]
       }
     ]
   },

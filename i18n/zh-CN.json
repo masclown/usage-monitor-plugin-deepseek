@@ -12,6 +12,8 @@
   "plugin.DeepSeek.chart.dailyToken": "每日Token用量",
   "plugin.DeepSeek.chart.channelCost": "渠道费用",
   "plugin.DeepSeek.chart.balanceBreakdown": "余额构成",
+  "plugin.DeepSeek.chart.balanceTrend": "余额趋势",
+  "plugin.DeepSeek.chart.monthlyCostTrend": "月消费趋势",
 
   "plugin.DeepSeek.group.balance": "余额",
   "plugin.DeepSeek.group.monthlyCost": "本月消费",

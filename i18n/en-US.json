@@ -12,6 +12,8 @@
   "plugin.DeepSeek.chart.dailyToken": "Daily Token Usage",
   "plugin.DeepSeek.chart.channelCost": "Channel Cost",
   "plugin.DeepSeek.chart.balanceBreakdown": "Balance Breakdown",
+  "plugin.DeepSeek.chart.balanceTrend": "Balance Trend",
+  "plugin.DeepSeek.chart.monthlyCostTrend": "Monthly Cost Trend",
 
   "plugin.DeepSeek.group.balance": "Balance",
   "plugin.DeepSeek.group.monthlyCost": "Monthly Cost",
