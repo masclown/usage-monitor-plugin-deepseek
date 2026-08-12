@@ -35,6 +35,7 @@
   "errorGuidance": [
     { "matchCodes": [ "credential_missing", "config_missing" ], "matchKeywords": [], "message": "i18n:plugin.DeepSeek.guidance.credential" },
     { "matchCodes": [ "auth_invalid" ], "matchKeywords": [ "40002", "Missing Token", "401" ], "message": "i18n:plugin.DeepSeek.guidance.authInvalid" },
+    { "matchCodes": [ "network_unreachable", "network_error", "timeout" ], "matchKeywords": [], "message": "i18n:plugin.DeepSeek.guidance.networkUnreachable" },
     { "matchKeywords": [], "message": "i18n:plugin.DeepSeek.guidance.fallback" }
   ],
   "usageUrls": {
@@ -52,8 +53,6 @@
         },
         "fields": [
           { "path": "$.data.biz_data.normal_wallets[0].balance", "target": "balance_amount", "transform": "parseNumber" },
-          { "path": "$.data.biz_data.bonus_wallets[0].balance", "target": "bonus_balance_amount", "transform": "parseNumber" },
-          { "path": "$.data.biz_data.total_available_token_estimation", "target": "available_token_estimation", "transform": "parseNumber" },
           { "path": "$.data.biz_data.monthly_costs[0].amount", "target": "monthly_cost", "transform": "parseNumber" },
           { "path": "$.data.biz_data.total_costs[0].amount", "target": "total_cost", "transform": "parseNumber" },
           { "path": "$.data.biz_data.monthly_token_usage", "target": "monthly_token_usage", "transform": "parseNumber" }
@@ -252,22 +251,6 @@
         "dataGroups": [
           { "id": "sdk.template.dailyChannelCost", "display": "i18n:plugin.DeepSeek.group.channelCostChannel", "fields": [
             { "fieldName": "channel_request_cost", "role": "Value" }
-          ] }
-        ]
-      },
-      {
-        "chartId": "ds.chart.balanceBreakdown",
-        "display": "i18n:plugin.DeepSeek.chart.balanceBreakdown",
-        "kind": "StackedProgress",
-        "defaultOrder": 6,
-        "tooltip": {
-          "fields": ["balance_amount", "bonus_balance_amount", "available_token_estimation"]
-        },
-        "dataGroups": [
-          { "id": "ds.balance.breakdown", "display": "i18n:plugin.DeepSeek.group.balanceBreakdown", "fields": [
-            { "fieldName": "balance_amount", "role": "Value" },
-            { "fieldName": "bonus_balance_amount", "role": "Value" },
-            { "fieldName": "available_token_estimation", "role": "Upper" }
           ] }
         ]
       },

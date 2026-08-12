@@ -4,6 +4,7 @@
   "plugin.DeepSeek.field.ApiKey.placeholder": "请输入 DeepSeek API Key",
   "plugin.DeepSeek.guidance.credential": "请在设置界面填写 DeepSeek 的 API Key（可选）；登录态由浏览器自动获取",
   "plugin.DeepSeek.guidance.authInvalid": "登录态或 API Key 无效，请重新从浏览器获取或检查 API Key",
+  "plugin.DeepSeek.guidance.networkUnreachable": "网络无法访问 DeepSeek 接口，请检查网络连接、代理/VPN 是否正常",
   "plugin.DeepSeek.guidance.fallback": "请检查 DeepSeek 插件配置",
 
   "plugin.DeepSeek.chart.overview": "DeepSeek概览",

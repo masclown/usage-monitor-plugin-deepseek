@@ -4,6 +4,7 @@
   "plugin.DeepSeek.field.ApiKey.placeholder": "Enter DeepSeek API Key",
   "plugin.DeepSeek.guidance.credential": "Please fill in DeepSeek API Key in settings (optional); login state is fetched via browser",
   "plugin.DeepSeek.guidance.authInvalid": "Login state or API Key is invalid, please re-fetch from browser or check API Key",
+  "plugin.DeepSeek.guidance.networkUnreachable": "Cannot reach DeepSeek APIs, please check network or proxy/VPN settings",
   "plugin.DeepSeek.guidance.fallback": "Please check DeepSeek plugin configuration",
 
   "plugin.DeepSeek.chart.overview": "DeepSeek Overview",
