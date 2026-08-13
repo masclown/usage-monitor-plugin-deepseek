@@ -122,7 +122,7 @@
       }
     ],
     "computed": [
-      { "target": "subscription_active", "op": "constant", "value": true },
+      // X-8 subscription_active 已下线（2026-08-13）：从 computed 段移除。
       { "target": "used_tokens", "op": "sumDailyStats", "column": "token_total", "window": "30d" },
       { "target": "window_token_1d", "op": "sumDailyStats", "column": "token_total", "window": "1d" },
       { "target": "window_token_7d", "op": "sumDailyStats", "column": "token_total", "window": "7d" },
