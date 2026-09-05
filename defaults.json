@@ -14,8 +14,7 @@
   "metadata": {
     "supportedBuckets": [ "day", "week", "month" ],
     "fallbackBucket": "day",
-    "supportedTables": [ 1 ],
-    "availableSlicerFields": [ "model_name", "channel" ]
+    "supportedTables": [ 1 ]
   },
   "loginConfig": {
     "loginUrl": "https://platform.deepseek.com/sign_in",
@@ -39,7 +38,8 @@
     { "matchKeywords": [], "message": "i18n:plugin.DeepSeek.guidance.fallback" }
   ],
   "usageUrls": {
-    "zh-CN": "https://platform.deepseek.com/usage"
+    "zh-CN": "https://platform.deepseek.com/usage",
+    "en-US": "https://platform.deepseek.com/usage"
   },
   "fetch": {
     "endpoints": [
@@ -188,7 +188,7 @@
         "chartId": "ds.chart.requestTrend",
         "display": "i18n:plugin.DeepSeek.chart.requestTrend",
         "kind": "Curve",
-        "defaultOrder": 5,
+        "defaultOrder": 3,
         "slicer": {
           "mode": "Period",
           "default": "Last30Days",
@@ -210,7 +210,7 @@
         "chartId": "ds.chart.dailyToken",
         "display": "i18n:plugin.DeepSeek.chart.dailyToken",
         "kind": "StackedBar",
-        "defaultOrder": 3,
+        "defaultOrder": 4,
         "slicer": {
           "mode": "Period",
           "default": "Last30Days",
@@ -237,7 +237,7 @@
         "chartId": "ds.chart.channelCost",
         "display": "i18n:plugin.DeepSeek.chart.channelCost",
         "kind": "StackedBar",
-        "defaultOrder": 4,
+        "defaultOrder": 5,
         "slicer": {
           "mode": "Period",
           "default": "Last30Days",
@@ -258,7 +258,7 @@
         "chartId": "ds.chart.balanceTrend",
         "display": "i18n:plugin.DeepSeek.chart.balanceTrend",
         "kind": "Curve",
-        "defaultOrder": 7,
+        "defaultOrder": 6,
         "slicer": {
           "mode": "Period",
           "position": "TopRight",
@@ -279,7 +279,7 @@
         "chartId": "ds.chart.monthlyCostTrend",
         "display": "i18n:plugin.DeepSeek.chart.monthlyCostTrend",
         "kind": "Curve",
-        "defaultOrder": 8,
+        "defaultOrder": 7,
         "slicer": {
           "mode": "Period",
           "position": "TopRight",
@@ -305,7 +305,7 @@
         "display": "i18n:plugin.DeepSeek.mini.ring",
         "kind": "MiniRingChart",
         "slicer": { "mode": "DataGroup", "interaction": "Scroll", "default": "ds.taskbar.balance" },
-        "tooltip": { "fields": ["__provider_name__", "balance_amount", "monthly_cost"] },
+        "tooltip": { "fields": ["__provider_name__", "balance_amount", "monthly_cost", "__refresh_countdown__"] },
         "dataGroups": [
           { "id": "ds.taskbar.balance", "display": "i18n:plugin.DeepSeek.group.taskbarBalance", "fields": [{ "fieldName": "balance_amount", "role": "Value" }] },
           { "id": "ds.taskbar.monthly", "display": "i18n:plugin.DeepSeek.group.taskbarMonthly", "fields": [{ "fieldName": "monthly_cost", "role": "Value" }] }
@@ -316,7 +316,7 @@
         "display": "i18n:plugin.DeepSeek.mini.text",
         "kind": "MiniText",
         "slicer": { "mode": "DataGroup", "interaction": "Scroll", "default": "ds.taskbar.balance" },
-        "tooltip": { "fields": ["__provider_name__", "balance_amount", "monthly_cost"] },
+        "tooltip": { "fields": ["__provider_name__", "balance_amount", "monthly_cost", "__refresh_countdown__"] },
         "dataGroups": [
           { "id": "ds.taskbar.balance", "display": "i18n:plugin.DeepSeek.group.taskbarBalance", "fields": [{ "fieldName": "balance_amount", "role": "Value" }] },
           { "id": "ds.taskbar.monthly", "display": "i18n:plugin.DeepSeek.group.taskbarMonthly", "fields": [{ "fieldName": "monthly_cost", "role": "Value" }] }

@@ -12,7 +12,6 @@
   "plugin.DeepSeek.chart.requestTrend": "API Request Trend",
   "plugin.DeepSeek.chart.dailyToken": "Daily Token Usage",
   "plugin.DeepSeek.chart.channelCost": "Channel Cost",
-  "plugin.DeepSeek.chart.balanceBreakdown": "Balance Breakdown",
   "plugin.DeepSeek.chart.balanceTrend": "Balance Trend",
   "plugin.DeepSeek.chart.monthlyCostTrend": "Monthly Cost Trend",
 
@@ -24,7 +23,6 @@
   "plugin.DeepSeek.group.requestCountModel": "API Requests (by Model)",
   "plugin.DeepSeek.group.dailyTokenModel": "Token Usage (by Model)",
   "plugin.DeepSeek.group.channelCostChannel": "Channel Cost (by Channel)",
-  "plugin.DeepSeek.group.balanceBreakdown": "Balance Breakdown",
   "plugin.DeepSeek.group.taskbarBalance": "Balance",
   "plugin.DeepSeek.group.taskbarMonthly": "Monthly Cost",
 

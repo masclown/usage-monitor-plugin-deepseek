@@ -1,5 +1,11 @@
 # Changelog
 
+## usage-monitor-plugin-deepseek 2.0.0 (2026-09-05)
+
+- `supportedTables` 扩展为 `[1]`（保留单表）；数据源 URL 双语化。
+- 卡片单位统一为 `unit: ¥`；tooltip 字段调整（balance_amount / monthly_cost）。
+- 下线 X-8 subscription_active 相关 computed 段。
+
 ## usage-monitor-plugin-deepseek 1.0.0 (2026-09-02)
 
 Initial release as an independent plugin repository.
